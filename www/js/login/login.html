@@ -1,0 +1,27 @@
+<ion-view view-title="Login">
+    
+    <ion-content class="padding">
+        <div style="display: flex;
+    justify-content: center;
+    margin-bottom: 34px;
+    margin-top: 52px;">
+            <img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=Logo&w=250&h=150" alt="">
+        </div>
+        <div class="list">
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Email</span>
+                <input type="text" placeholder="Email" ng-model="login.userData.email">
+            </label>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">Clave</span>
+                <input type="password" placeholder="Clave" ng-model="login.userData.pass">
+            </label>
+            <button class="button button-block button-positive" ng-click="login.validarUsuario()">
+                Ingresar al sistema
+            </button>
+            <button class="button button-block button-outline button-positive" ng-click="login.registro()">
+                Registrarse
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

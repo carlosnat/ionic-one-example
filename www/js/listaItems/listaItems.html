@@ -1,0 +1,16 @@
+<ion-view view-title="Series">
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content>
+        <div class="list">
+            <a ng-repeat="item in listaItems.items" class="item item-thumbnail-left" ng-click="listaItems.verDetalles(item)">
+            <img ng-src="{{ item.poster}}">
+            <h2>{{ item.titulo }}</h2>
+            <p>Score: {{ item.score }}</p>
+            <p>Categoria: {{ item.categoria }}</p>
+            <p>Temporadas: {{ item.temporadas }}</p>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,41 @@
+<ion-view view-title="{{ control.capitulo.titulo }}">
+    <ion-nav-bar class="bar-positive">
+        <ion-nav-back-button></ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="padding">
+        
+        <div class="list card">
+            <div class="item item-body">
+                <img class="full-image" ng-src="{{ control.capitulo.poster }}">
+                <p>{{ control.capitulo.descripcion }}</p>
+                <p>
+                <a href="#" class="subdued">1 Like</a>
+                <a href="#" class="subdued">5 Comments</a>
+                </p>
+            </div>
+        </div>
+        
+        <ul class="list">
+            <li class="item item-toggle">
+                <span ng-show="control.verCapituloEnWeb == false">Ver en Tv</span>
+                <span ng-show="control.verCapituloEnWeb == true">Ver en el celular</span>
+                <label class="toggle toggle-assertive">
+                <input type="checkbox" ng-model="control.verCapituloEnCel" ng-change="control.cambiarPantalla()">
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
+                </label>
+            </li>
+        </ul>
+        <div ng-show="control.verCapituloEnWeb">
+            <button ng-show="control.datos.control.accion == 'pause' || control.entrada" class="button button-block button-positive" ng-click="control.play()">
+                Play
+            </button>
+            <button ng-show="control.datos.control.accion == 'play' " class="button button-block button-positive" ng-click="control.pause()">
+                Pause
+            </button>
+        </div>
+        <video ng-show="control.verCapituloEnWeb == false" id="mobilScreen" class="chapter-video" controls="controls" preload="none" style="max-width:100%">
+        </video>
+    </ion-content>
+  </ion-view>

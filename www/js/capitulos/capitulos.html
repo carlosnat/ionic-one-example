@@ -1,0 +1,15 @@
+<ion-view view-title="{{ capitulos.temporada.titulo }}">
+    <ion-nav-bar class="bar-positive">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>
+    <ion-content class="padding">
+        <div class="list" ng-repeat="capitulo in capitulos.capitulos">
+            <a class="item item-avatar" ng-click="capitulos.verCapitulo(capitulo)">
+                <img ng-src="{{ capitulo.avatar }}">
+                <h2>{{ capitulo.titulo }}</h2>
+                <p>{{ capitulo.duracion }}</p>
+            </a>
+        </div>
+    </ion-content>
+</ion-view>
